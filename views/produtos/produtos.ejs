@@ -1,0 +1,55 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Controle de Produtos</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+        integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container">
+        <h3>Produtos cadastrados</h3><br>
+        <a href="/produtos/novo" class="btn btn-primary">Novo Produto</a><br><br>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nome</th>
+                    <th>Preço</th>
+                    <th>Quantidade</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% produtos.forEach(function(produto){ %>
+                <tr>
+                    <td><%=produto.id%></td>
+                    <td><%=produto.nome%></td>
+                    <td><%=produto.preco%></td>
+                    <td><%=produto.quantidade%></td>
+                    <td><a href="/produtos/editar/<%=produto.id%>" class="fas fa-edit" style="color:black"
+                            ata-toggle="tooltip" title="Editar contato"></a></td>
+                    <td><a href="/produtos/excluir/<%=produto.id%>" class="fas fa-trash" style="color: black"
+                            ata-toggle="tooltip" title="Excluir Produto."
+                            onclick="return confirm('Confirma a exclusão?')"></a></td>
+                </tr>
+                <% }) %>
+            </tbody>
+        </table> 
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script>
+
+    </script>
+</body>
+
+</html>
